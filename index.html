@@ -118,8 +118,13 @@
   .band-visual{border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--white); text-align:center; box-shadow:0 14px 34px rgba(75,54,163,.08);}
   .band-visual .script{font-size:30px; color:var(--orange-deep);}
   .preview{text-align:center; background:var(--paper-2);}
-  .sheet{max-width:460px; margin:0 auto; border:1px solid var(--line); background:var(--white); border-radius:16px; box-shadow:0 22px 50px rgba(75,54,163,.12); overflow:hidden; text-align:left;}
-  .sheet-top{background:var(--violet); color:#fff; padding:14px 20px; font-family:'Caveat',cursive; font-size:19px; font-weight:700; display:flex; justify-content:space-between;}
+  .carousel{overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+  .carousel-track{display:flex; width:max-content;}
+  .sheet-track{gap:22px; animation:scrollX 34s linear infinite;}
+  .carousel:hover .carousel-track{animation-play-state:paused;}
+  @keyframes scrollX{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  .sheet{flex:0 0 auto; width:300px; margin:0; border:1px solid var(--line); background:var(--white); border-radius:16px; box-shadow:0 22px 50px rgba(75,54,163,.12); overflow:hidden; text-align:left;}
+  .sheet-top{background:var(--violet); color:#fff; padding:14px 20px; font-family:'Caveat',cursive; font-size:19px; font-weight:700; display:flex; justify-content:space-between; gap:10px;}
   .sheet-body{padding:22px;}
   .sheet-line{height:38px; border-bottom:1px dashed var(--line); position:relative; margin-bottom:6px;}
   .sheet-line::before{content:""; position:absolute; left:0; right:0; top:50%; height:1px; background:var(--line);}
@@ -130,8 +135,8 @@
   .learn-item h3{font-size:16.5px; margin-bottom:4px;}
   .learn-item p{font-size:14px; color:var(--muted);}
   .testi-wrap{background:var(--paper-2);}
-  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .testi-card{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:0 10px 26px rgba(75,54,163,.06);}
+  .testi-track{gap:22px; animation:scrollX 30s linear infinite reverse;}
+  .testi-card{flex:0 0 auto; width:300px; background:var(--white); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:0 10px 26px rgba(75,54,163,.06);}
   .testi-stars{color:var(--gold); font-size:14px; margin-bottom:10px;}
   .testi-card p{font-size:14.5px; margin-bottom:14px;}
   .testi-name{font-size:13.5px; color:var(--muted); font-weight:700;}
@@ -183,12 +188,12 @@
   footer p{font-size:12.5px; max-width:640px; margin:14px auto 0;}
   @media (max-width:860px){
     .hero .grid,.band .wrap,.bonus{grid-template-columns:1fr;}
-    .benefit-grid,.steps-grid,.testi-grid,.learn-grid,.trust-grid,.price-grid{grid-template-columns:1fr 1fr;}
+    .benefit-grid,.steps-grid,.learn-grid,.trust-grid,.price-grid{grid-template-columns:1fr 1fr;}
     .hero h1{font-size:33px;}
   }
   @media (max-width:600px){
     section{padding:54px 0;}
-    .benefit-grid,.steps-grid,.testi-grid,.learn-grid,.trust-grid,.price-grid{grid-template-columns:1fr;}
+    .benefit-grid,.steps-grid,.learn-grid,.trust-grid,.price-grid{grid-template-columns:1fr;}
     .hero h1{font-size:28px;}
     .cta-row .btn{width:100%;}
   }
@@ -275,14 +280,108 @@
       <div class="kicker dark">veja como é</div>
       <h2>Exercícios simples de seguir</h2>
     </div>
-    <div class="sheet">
-      <div class="sheet-top"><span>Módulo 1 — Traços básicos</span><span>2/5</span></div>
-      <div class="sheet-body">
-        <div class="sheet-line"><span>a a a a a</span></div>
-        <div class="sheet-line"><span>b b b b b</span></div>
-        <div class="sheet-line"><span>ab ab ab</span></div>
-        <div class="sheet-line"><span>___ ___ ___</span></div>
-        <div class="sheet-line"><span>___ ___ ___</span></div>
+    <div class="carousel">
+      <div class="carousel-track sheet-track">
+        <div class="sheet">
+          <div class="sheet-top"><span>Módulo 1 — Traços básicos</span><span>1/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>a a a a a</span></div>
+            <div class="sheet-line"><span>b b b b b</span></div>
+            <div class="sheet-line"><span>ab ab ab</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet">
+          <div class="sheet-top"><span>Módulo 2 — Letras minúsculas</span><span>2/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>m n o p q</span></div>
+            <div class="sheet-line"><span>r s t u v</span></div>
+            <div class="sheet-line"><span>mno mno</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet">
+          <div class="sheet-top"><span>Módulo 3 — Letra cursiva</span><span>3/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>abc abc</span></div>
+            <div class="sheet-line"><span>def def</span></div>
+            <div class="sheet-line"><span>ghi ghi</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet">
+          <div class="sheet-top"><span>Módulo 4 — Palavras</span><span>4/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>casa bola</span></div>
+            <div class="sheet-line"><span>escola sol</span></div>
+            <div class="sheet-line"><span>letra bonita</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet">
+          <div class="sheet-top"><span>Módulo 5 — Frases</span><span>5/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>a letra que eu</span></div>
+            <div class="sheet-line"><span>sempre quis ter</span></div>
+            <div class="sheet-line"><span>treino todo dia</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet-top"><span>Módulo 1 — Traços básicos</span><span>1/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>a a a a a</span></div>
+            <div class="sheet-line"><span>b b b b b</span></div>
+            <div class="sheet-line"><span>ab ab ab</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet-top"><span>Módulo 2 — Letras minúsculas</span><span>2/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>m n o p q</span></div>
+            <div class="sheet-line"><span>r s t u v</span></div>
+            <div class="sheet-line"><span>mno mno</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet-top"><span>Módulo 3 — Letra cursiva</span><span>3/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>abc abc</span></div>
+            <div class="sheet-line"><span>def def</span></div>
+            <div class="sheet-line"><span>ghi ghi</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet-top"><span>Módulo 4 — Palavras</span><span>4/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>casa bola</span></div>
+            <div class="sheet-line"><span>escola sol</span></div>
+            <div class="sheet-line"><span>letra bonita</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet-top"><span>Módulo 5 — Frases</span><span>5/5</span></div>
+          <div class="sheet-body">
+            <div class="sheet-line"><span>a letra que eu</span></div>
+            <div class="sheet-line"><span>sempre quis ter</span></div>
+            <div class="sheet-line"><span>treino todo dia</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+            <div class="sheet-line"><span>___ ___ ___</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -307,10 +406,21 @@
       <div class="kicker dark">quem já usou</div>
       <h2>O que dizem os alunos</h2>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Em duas semanas já dava pra ver diferença. Minha letra nunca foi tão legível."</p><div class="testi-name">P. Ferreira</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Fiz com meu filho, ele adorou e eu também aproveitei pra treinar a minha."</p><div class="testi-name">J. Martins</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Simples de seguir, só 15 minutos por dia e já mudou como eu escrevo."</p><div class="testi-name">A. Ribeiro</div></div>
+    <div class="carousel">
+      <div class="carousel-track testi-track">
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Em duas semanas já dava pra ver diferença. Minha letra nunca foi tão legível."</p><div class="testi-name">P. Ferreira</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Fiz com meu filho, ele adorou e eu também aproveitei pra treinar a minha."</p><div class="testi-name">J. Martins</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Simples de seguir, só 15 minutos por dia e já mudou como eu escrevo."</p><div class="testi-name">A. Ribeiro</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Sempre tive vergonha da minha letra. Hoje escrevo cartão sem medo de ninguém entender."</p><div class="testi-name">C. Almeida</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Minha filha estava com dificuldade na escola e o método ajudou muito na coordenação."</p><div class="testi-name">R. Souza</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Achei que não ia funcionar pra mim, mas em uma semana já senti mais confiança pra escrever."</p><div class="testi-name">L. Costa</div></div>
+        <div class="testi-card" aria-hidden="true"><div class="testi-stars">★★★★★</div><p>"Em duas semanas já dava pra ver diferença. Minha letra nunca foi tão legível."</p><div class="testi-name">P. Ferreira</div></div>
+        <div class="testi-card" aria-hidden="true"><div class="testi-stars">★★★★★</div><p>"Fiz com meu filho, ele adorou e eu também aproveitei pra treinar a minha."</p><div class="testi-name">J. Martins</div></div>
+        <div class="testi-card" aria-hidden="true"><div class="testi-stars">★★★★★</div><p>"Simples de seguir, só 15 minutos por dia e já mudou como eu escrevo."</p><div class="testi-name">A. Ribeiro</div></div>
+        <div class="testi-card" aria-hidden="true"><div class="testi-stars">★★★★★</div><p>"Sempre tive vergonha da minha letra. Hoje escrevo cartão sem medo de ninguém entender."</p><div class="testi-name">C. Almeida</div></div>
+        <div class="testi-card" aria-hidden="true"><div class="testi-stars">★★★★★</div><p>"Minha filha estava com dificuldade na escola e o método ajudou muito na coordenação."</p><div class="testi-name">R. Souza</div></div>
+        <div class="testi-card" aria-hidden="true"><div class="testi-stars">★★★★★</div><p>"Achei que não ia funcionar pra mim, mas em uma semana já senti mais confiança pra escrever."</p><div class="testi-name">L. Costa</div></div>
+      </div>
     </div>
   </div>
 </section>
