@@ -49,7 +49,21 @@
   .btn-block{width:100%;}
   section{padding:76px 0;}
   .rule{height:1px; background:var(--line);}
-  .topbar{background:var(--orange-deep); color:#fff; text-align:center; font-size:13.5px; font-weight:700; padding:9px 14px; letter-spacing:.02em;}
+  .topbar{background:var(--orange-deep); color:#fff; text-align:center; font-size:13.5px; font-weight:700; padding:9px 14px; letter-spacing:.02em; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;}
+  .topbar #countdown{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:14.5px; background:rgba(255,255,255,.18); padding:2px 9px; border-radius:6px; letter-spacing:.03em;}
+  @keyframes ctaPulse{
+    0%{box-shadow:0 10px 24px rgba(232,90,27,.35), 0 0 0 0 rgba(232,90,27,.55);}
+    70%{box-shadow:0 10px 24px rgba(232,90,27,.35), 0 0 0 14px rgba(232,90,27,0);}
+    100%{box-shadow:0 10px 24px rgba(232,90,27,.35), 0 0 0 0 rgba(232,90,27,0);}
+  }
+  @keyframes ctaPulseViolet{
+    0%{box-shadow:0 10px 24px rgba(75,54,163,.3), 0 0 0 0 rgba(75,54,163,.5);}
+    70%{box-shadow:0 10px 24px rgba(75,54,163,.3), 0 0 0 14px rgba(75,54,163,0);}
+    100%{box-shadow:0 10px 24px rgba(75,54,163,.3), 0 0 0 0 rgba(75,54,163,0);}
+  }
+  .btn-orange.btn-cta{animation:ctaPulse 1.8s ease-in-out infinite;}
+  .btn-violet.btn-cta{animation:ctaPulseViolet 1.8s ease-in-out infinite;}
+  .btn-cta:hover{animation-play-state:paused;}
   header.site{padding:16px 0; background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20;}
   header.site .wrap{display:flex; align-items:center; justify-content:space-between;}
   .logo{font-family:'Caveat',cursive; font-weight:700; font-size:30px; color:var(--violet);}
@@ -182,7 +196,7 @@
 </style>
 </head>
 <body>
-<div class="topbar">✎ Vagas com desconto de lançamento — encerra em breve</div>
+<div class="topbar">⏰ Desconto de lançamento expira em <span id="countdown">15:00</span></div>
 <header class="site">
   <div class="wrap">
     <div class="logo">Letra Bonita</div>
@@ -201,7 +215,7 @@
         <li><span class="mark">✓</span> Método prático, pra adultos e crianças</li>
       </ul>
       <div class="cta-row">
-        <a href="#planos" class="btn btn-orange">Quero melhorar minha letra</a>
+        <a href="#planos" class="btn btn-orange btn-cta">Quero melhorar minha letra</a>
       </div>
       <div class="trust-line"><span class="stars">★★★★★</span> mais de 1.200 alunos já mudaram a letra</div>
     </div>
@@ -342,7 +356,7 @@
         </ul>
         <div class="price-now">R$9,90</div>
         <div class="price-note">Pagamento único · acesso imediato</div>
-        <a href="#" class="btn btn-violet btn-block">Eu quero o pacote básico</a>
+        <a href="#" class="btn btn-violet btn-block btn-cta">Eu quero o pacote básico</a>
       </div>
       <div class="price-card featured">
         <div class="featured-tag">Mais escolhido</div>
@@ -356,7 +370,7 @@
         </ul>
         <div class="price-now">R$27,90</div>
         <div class="price-note">Pagamento único · acesso imediato</div>
-        <a href="#" class="btn btn-orange btn-block">Quero o pacote premium agora</a>
+        <a href="#" class="btn btn-orange btn-block btn-cta">Quero o pacote premium agora</a>
       </div>
     </div>
   </div>
@@ -372,7 +386,7 @@
       <div class="trust-item"><div class="trust-icon">✉</div><h3>Acesso imediato</h3><p>Recebe por e-mail assim que o pagamento é aprovado.</p></div>
       <div class="trust-item"><div class="trust-icon">🔒</div><h3>Pagamento protegido</h3><p>Ambiente seguro, com Pix ou cartão em até 3x.</p></div>
     </div>
-    <div class="trust-cta"><a href="#planos" class="btn btn-violet">Quero começar agora</a></div>
+    <div class="trust-cta"><a href="#planos" class="btn btn-violet btn-cta">Quero começar agora</a></div>
   </div>
 </section>
 <section class="faq-wrap">
@@ -411,5 +425,27 @@
     <p>Todos os direitos reservados. Este material é protegido por leis de direitos autorais. É proibida a reprodução ou distribuição sem autorização prévia.</p>
   </div>
 </footer>
+<script>
+(function(){
+  var el = document.getElementById('countdown');
+  var duration = 15 * 60;
+  function render(){
+    var m = Math.floor(duration / 60);
+    var s = duration % 60;
+    el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  render();
+  var timer = setInterval(function(){
+    duration--;
+    if(duration <= 0){
+      duration = 0;
+      render();
+      clearInterval(timer);
+      return;
+    }
+    render();
+  }, 1000);
+})();
+</script>
 </body>
 </html>
