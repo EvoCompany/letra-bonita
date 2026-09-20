@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Letra Bonita — Método de Caligrafia em 14 dias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600;700&family=Work+Sans:wght@400;500;600;700;800&family=Reenie+Beanie&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --violet:#4B36A3;
+    --violet-deep:#2E2166;
+    --violet-tint:#F1EDFB;
+    --orange:#FF7A3D;
+    --orange-deep:#E85A1B;
+    --paper:#FFFFFF;
+    --paper-2:#FAFAFB;
+    --text:#221A3E;
+    --muted:#5B5480;
+    --line:#E4DEF6;
+    --danger:#E14F4F;
+    --danger-bg:#FDECEC;
+    --success:#1FA25C;
+    --success-bg:#E7F7EE;
+    --gold:#F2A93B;
+    --white:#FFFFFF;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+  body{font-family:'Work Sans',sans-serif; background:var(--paper); color:var(--text); line-height:1.6;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--violet-deep);}
+  a{color:inherit; text-decoration:none;}
+  .script{font-family:'Caveat',cursive; font-weight:600;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:17px 34px; border-radius:14px; font-weight:700; font-size:16px;
+    cursor:pointer; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-orange{background:var(--orange); color:var(--white); box-shadow:0 10px 24px rgba(232,90,27,.35);}
+  .btn-orange:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(232,90,27,.45);}
+  .btn-violet{background:var(--violet); color:var(--white); box-shadow:0 10px 24px rgba(75,54,163,.3);}
+  .btn-violet:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(75,54,163,.4);}
+  .btn-block{width:100%;}
+  section{padding:76px 0;}
+  .rule{height:1px; background:var(--line);}
+  .topbar{background:var(--orange-deep); color:#fff; text-align:center; font-size:13.5px; font-weight:700; padding:9px 14px; letter-spacing:.02em;}
+  header.site{padding:16px 0; background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20;}
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .logo{font-family:'Caveat',cursive; font-weight:700; font-size:30px; color:var(--violet);}
+  .hero{background:linear-gradient(165deg,var(--violet) 0%,var(--violet-deep) 100%); color:#fff; padding:56px 0 68px;}
+  .hero .grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:54px; align-items:center;}
+  .kicker{font-family:'Caveat',cursive; font-size:23px; color:#FFD8B0; font-weight:700;}
+  .hero h1{font-size:43px; line-height:1.14; margin:8px 0 18px; color:#fff;}
+  .hero p.lead{font-size:17.5px; color:#DCD5F5; max-width:46ch; margin-bottom:24px;}
+  .checklist{list-style:none; margin-bottom:26px;}
+  .checklist li{display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:15.5px; color:#EFEBFC;}
+  .checklist li .mark{
+    flex:0 0 auto; width:21px; height:21px; border-radius:50%; background:var(--gold);
+    color:var(--violet-deep); font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:2px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .trust-line{margin-top:16px; font-size:13.5px; color:#CFC6F0;}
+  .trust-line .stars{color:var(--gold); letter-spacing:1px;}
+  .hero-visual{position:relative; border:1px solid var(--line); background:var(--white); padding:22px; border-radius:16px; box-shadow:0 24px 60px rgba(20,10,60,.35);}
+  .ba{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .ba-card{border:2px solid var(--line); padding:18px 14px; border-radius:12px;}
+  .ba-card.before{border-color:var(--danger); background:var(--danger-bg);}
+  .ba-card.after{border-color:var(--success); background:var(--success-bg);}
+  .ba-tag{display:inline-flex; align-items:center; gap:6px; font-weight:800; font-size:12.5px; letter-spacing:.02em; padding:4px 11px; border-radius:20px; margin-bottom:14px;}
+  .ba-tag.before{background:var(--danger); color:#fff;}
+  .ba-tag.after{background:var(--success); color:#fff;}
+  .example-box{height:118px; display:flex; align-items:center; justify-content:center; border-radius:8px; padding:6px 4px;
+    background-image:repeating-linear-gradient(var(--white) 0 27px, var(--line) 27px 28px);
+    background-color:var(--white); border:1px solid var(--line);}
+  .example-text{line-height:1;}
+  .example-text.messy{font-family:'Reenie Beanie',cursive; font-size:40px; color:var(--danger); display:inline-flex;}
+  .example-text.messy span{display:inline-block;}
+  .example-text.tidy{font-family:'Dancing Script',cursive; font-weight:700; font-size:34px; color:var(--success);}
+  .ba-caption{margin-top:10px; font-size:12.5px; color:var(--muted); text-align:center;}
+  .section-head{text-align:center; max-width:580px; margin:0 auto 46px;}
+  .section-head h2{font-size:32px; margin-top:8px;}
+  .section-head .kicker.dark{color:var(--orange-deep);}
+  .benefit-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .benefit{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:28px 24px; box-shadow:0 10px 26px rgba(75,54,163,.06);}
+  .benefit .ico{width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-size:19px; font-weight:800; color:#fff;}
+  .benefit:nth-child(1) .ico{background:var(--orange);}
+  .benefit:nth-child(2) .ico{background:#3E8EDE;}
+  .benefit:nth-child(3) .ico{background:var(--success);}
+  .benefit:nth-child(4) .ico{background:var(--violet);}
+  .benefit:nth-child(5) .ico{background:var(--gold);}
+  .benefit:nth-child(6) .ico{background:#E14F8E;}
+  .benefit h3{font-size:17.5px; margin-bottom:8px;}
+  .benefit p{font-size:14.5px; color:var(--muted);}
+  .band{background:var(--paper-2);}
+  .band .wrap{display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:center;}
+  .band h2{font-size:30px; margin-bottom:16px;}
+  .band p{color:var(--muted); font-size:16px; max-width:44ch;}
+  .band-visual{border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--white); text-align:center; box-shadow:0 14px 34px rgba(75,54,163,.08);}
+  .band-visual .script{font-size:30px; color:var(--orange-deep);}
+  .preview{text-align:center; background:var(--paper-2);}
+  .sheet{max-width:460px; margin:0 auto; border:1px solid var(--line); background:var(--white); border-radius:16px; box-shadow:0 22px 50px rgba(75,54,163,.12); overflow:hidden; text-align:left;}
+  .sheet-top{background:var(--violet); color:#fff; padding:14px 20px; font-family:'Caveat',cursive; font-size:19px; font-weight:700; display:flex; justify-content:space-between;}
+  .sheet-body{padding:22px;}
+  .sheet-line{height:38px; border-bottom:1px dashed var(--line); position:relative; margin-bottom:6px;}
+  .sheet-line::before{content:""; position:absolute; left:0; right:0; top:50%; height:1px; background:var(--line);}
+  .sheet-line span{position:relative; font-family:'Caveat',cursive; font-size:24px; color:var(--orange-deep);}
+  .learn-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px 40px; max-width:820px; margin:0 auto;}
+  .learn-item{display:flex; gap:14px;}
+  .learn-mark{flex:0 0 auto; width:36px; height:36px; background:var(--violet); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:16px;}
+  .learn-item h3{font-size:16.5px; margin-bottom:4px;}
+  .learn-item p{font-size:14px; color:var(--muted);}
+  .testi-wrap{background:var(--paper-2);}
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi-card{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:0 10px 26px rgba(75,54,163,.06);}
+  .testi-stars{color:var(--gold); font-size:14px; margin-bottom:10px;}
+  .testi-card p{font-size:14.5px; margin-bottom:14px;}
+  .testi-name{font-size:13.5px; color:var(--muted); font-weight:700;}
+  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:32px; max-width:900px; margin:0 auto;}
+  .step{text-align:center;}
+  .step-index{width:50px; height:50px; border-radius:14px; background:var(--violet); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:20px; margin:0 auto 16px;}
+  .step h3{font-size:17px; margin-bottom:6px;}
+  .step p{font-size:14px; color:var(--muted);}
+  .bonus{background:var(--violet); color:#fff; border-radius:20px; padding:40px; display:grid; grid-template-columns:190px 1fr; gap:36px; align-items:center; max-width:820px; margin:0 auto; box-shadow:0 24px 50px rgba(75,54,163,.3);}
+  .bonus-badge{display:inline-block; background:var(--orange); color:#fff; font-size:12.5px; font-weight:800; padding:6px 14px; border-radius:20px; margin-bottom:14px;}
+  .ebook-mock{aspect-ratio:3/4; background:linear-gradient(160deg,var(--orange),var(--orange-deep)); border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Caveat',cursive; font-weight:700; font-size:21px; text-align:center; padding:18px; box-shadow:0 16px 30px rgba(0,0,0,.25);}
+  .bonus p{color:#E4DEF7; font-size:15px;}
+  .pricing-wrap{text-align:center;}
+  .price-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; max-width:760px; margin:0 auto;}
+  .price-card{text-align:left; border-radius:20px; padding:32px; position:relative;}
+  .price-card.basic{background:var(--white); border:2px solid var(--line);}
+  .price-card.featured{background:var(--violet); color:#fff; box-shadow:0 24px 50px rgba(75,54,163,.35);}
+  .featured-tag{position:absolute; top:-14px; right:26px; background:var(--gold); color:var(--violet-deep); font-size:12px; font-weight:800; padding:6px 14px; border-radius:20px;}
+  .price-name{font-family:'Caveat',cursive; font-weight:700; font-size:20px; margin-bottom:8px;}
+  .price-card.basic .price-name{color:var(--orange-deep);}
+  .price-card.featured .price-name{color:#FFD8B0;}
+  .price-title{font-size:19px; margin-bottom:16px; font-family:'Baloo 2',sans-serif; font-weight:700;}
+  .price-card.featured .price-title{color:#fff;}
+  .price-list{list-style:none; margin-bottom:22px;}
+  .price-list li{display:flex; gap:10px; font-size:14.5px; padding:6px 0; align-items:flex-start;}
+  .price-card.basic .price-list li .mark{color:var(--success);}
+  .price-card.featured .price-list li .mark{color:var(--gold);}
+  .price-now{font-family:'Baloo 2',sans-serif; font-size:38px; font-weight:800; margin:4px 0 4px;}
+  .price-card.basic .price-now{color:var(--violet-deep);}
+  .price-card.featured .price-now{color:#fff;}
+  .price-note{font-size:12.5px; margin-bottom:18px;}
+  .price-card.basic .price-note{color:var(--muted);}
+  .price-card.featured .price-note{color:#CFC6F0;}
+  .trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:820px; margin:0 auto 36px;}
+  .trust-item{text-align:center;}
+  .trust-icon{width:48px; height:48px; border-radius:14px; background:var(--paper-2); margin:0 auto 12px; display:flex; align-items:center; justify-content:center; color:var(--violet); font-weight:800;}
+  .trust-item h3{font-size:15px; margin-bottom:4px;}
+  .trust-item p{font-size:13px; color:var(--muted);}
+  .trust-cta{text-align:center;}
+  .faq{max-width:720px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{list-style:none; cursor:pointer; padding:20px 4px; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:15.5px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .plus{font-family:'Caveat',cursive; color:var(--orange-deep); font-size:24px; font-weight:700;}
+  .faq-item[open] summary .plus{transform:rotate(45deg);}
+  .faq-item p{padding:0 4px 20px; color:var(--muted); font-size:14.5px; max-width:60ch;}
+  footer{background:var(--violet-deep); color:#C7BEEA; padding:44px 0 30px; text-align:center;}
+  footer .logo2{font-family:'Caveat',cursive; color:#fff; font-size:22px; margin-bottom:10px; font-weight:700;}
+  footer p{font-size:12.5px; max-width:640px; margin:14px auto 0;}
+  @media (max-width:860px){
+    .hero .grid,.band .wrap,.bonus{grid-template-columns:1fr;}
+    .benefit-grid,.steps-grid,.testi-grid,.learn-grid,.trust-grid,.price-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:33px;}
+  }
+  @media (max-width:600px){
+    section{padding:54px 0;}
+    .benefit-grid,.steps-grid,.testi-grid,.learn-grid,.trust-grid,.price-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:28px;}
+    .cta-row .btn{width:100%;}
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#181229; --paper-2:#1F1836; --white:#221B3B; --text:#EDE8FA; --muted:#B6ACD6; --line:#382E5C;
+    }
+    :root:not([data-theme="light"]) h1,
+    :root:not([data-theme="light"]) h2,
+    :root:not([data-theme="light"]) h3{color:#F1ECFC;}
+  }
+  :root[data-theme="dark"]{
+    --paper:#181229; --paper-2:#1F1836; --white:#221B3B; --text:#EDE8FA; --muted:#B6ACD6; --line:#382E5C;
+  }
+</style>
+</head>
+<body>
+<div class="topbar">✎ Vagas com desconto de lançamento — encerra em breve</div>
+<header class="site">
+  <div class="wrap">
+    <div class="logo">Letra Bonita</div>
+    <a href="#planos" class="btn btn-violet" style="padding:11px 22px; font-size:14px;">Ver planos</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="kicker">método de caligrafia</div>
+      <h1>Transforme sua letra em 14 dias, sem enrolação.</h1>
+      <p class="lead">Exercícios curtos e progressivos pra você escrever com mais rapidez, clareza e confiança — em casa, no seu tempo.</p>
+      <ul class="checklist">
+        <li><span class="mark">✓</span> Mais de 300 exercícios prontos pra imprimir</li>
+        <li><span class="mark">✓</span> Resultados visíveis em até 2 semanas</li>
+        <li><span class="mark">✓</span> Método prático, pra adultos e crianças</li>
+      </ul>
+      <div class="cta-row">
+        <a href="#planos" class="btn btn-orange">Quero melhorar minha letra</a>
+      </div>
+      <div class="trust-line"><span class="stars">★★★★★</span> mais de 1.200 alunos já mudaram a letra</div>
+    </div>
+    <div class="hero-visual">
+      <div class="ba">
+        <div class="ba-card before">
+          <div class="ba-tag before">✕ Antes</div>
+          <div class="example-box">
+            <div class="example-text messy">
+              <span style="transform:rotate(-8deg) translateY(2px);">l</span><span style="transform:rotate(5deg) translateY(-4px);">e</span><span style="transform:rotate(-4deg) translateY(3px);">t</span><span style="transform:rotate(7deg) translateY(-2px); font-size:.8em;">r</span><span style="transform:rotate(-6deg) translateY(4px);">a</span>
+            </div>
+          </div>
+          <div class="ba-caption">Difícil de ler, sem padrão</div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-tag after">✓ Depois</div>
+          <div class="example-box">
+            <div class="example-text tidy">letra</div>
+          </div>
+          <div class="ba-caption">Clara, fluida e no mesmo padrão</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="benefits">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">já na primeira semana</div>
+      <h2>O que você ganha ao treinar sua letra</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit"><div class="ico">✎</div><h3>Escrita mais rápida</h3><p>Técnicas simples que tornam sua letra mais ágil e natural, sem esforço.</p></div>
+      <div class="benefit"><div class="ico">◐</div><h3>Mais concentração</h3><p>Os exercícios ajudam a acalmar a mente e focar em uma tarefa por vez.</p></div>
+      <div class="benefit"><div class="ico">✦</div><h3>Coordenação motora</h3><p>Desenvolve habilidades finas úteis em várias atividades do dia a dia.</p></div>
+      <div class="benefit"><div class="ico">◈</div><h3>Mais autoestima</h3><p>Uma letra mais bonita muda como você se sente ao escrever qualquer coisa.</p></div>
+      <div class="benefit"><div class="ico">✓</div><h3>Progresso visível</h3><p>Compare suas folhas da semana 1 e da semana 2 e veja a diferença.</p></div>
+      <div class="benefit"><div class="ico">✉</div><h3>Comunicação clara</h3><p>Uma letra legível facilita anotações, cartas e trabalhos no dia a dia.</p></div>
+    </div>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div>
+      <div class="kicker dark">pra toda a família</div>
+      <h2>Ideal tanto pra adultos quanto pra crianças</h2>
+      <p>Serve pra quem está na fase de alfabetização quanto pra quem só quer escrever com mais confiança. Estimule seu filho, ou você mesmo, com prática leve e diária.</p>
+    </div>
+    <div class="band-visual">
+      <div class="script">"a letra que eu sempre quis ter"</div>
+    </div>
+  </div>
+</section>
+<section class="preview">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">veja como é</div>
+      <h2>Exercícios simples de seguir</h2>
+    </div>
+    <div class="sheet">
+      <div class="sheet-top"><span>Módulo 1 — Traços básicos</span><span>2/5</span></div>
+      <div class="sheet-body">
+        <div class="sheet-line"><span>a a a a a</span></div>
+        <div class="sheet-line"><span>b b b b b</span></div>
+        <div class="sheet-line"><span>ab ab ab</span></div>
+        <div class="sheet-line"><span>___ ___ ___</span></div>
+        <div class="sheet-line"><span>___ ___ ___</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="learn">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">o que vem no método</div>
+      <h2>O que você aprende com o Letra Bonita</h2>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-item"><div class="learn-mark">1</div><div><h3>Coordenação motora</h3><p>Atividades desenvolvidas pra aprimorar suas habilidades motoras finas.</p></div></div>
+      <div class="learn-item"><div class="learn-mark">2</div><div><h3>Treino diário</h3><p>Rotina progressiva, do traço básico até palavras e frases completas.</p></div></div>
+      <div class="learn-item"><div class="learn-mark">3</div><div><h3>9 estilos de alfabeto</h3><p>Do básico aos estilos mais artísticos, ampliando seu repertório.</p></div></div>
+      <div class="learn-item"><div class="learn-mark">4</div><div><h3>Técnicas de lettering</h3><p>Transforme sua escrita em verdadeiras obras de arte, passo a passo.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="testi-wrap">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">quem já usou</div>
+      <h2>O que dizem os alunos</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Em duas semanas já dava pra ver diferença. Minha letra nunca foi tão legível."</p><div class="testi-name">P. Ferreira</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Fiz com meu filho, ele adorou e eu também aproveitei pra treinar a minha."</p><div class="testi-name">J. Martins</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p>"Simples de seguir, só 15 minutos por dia e já mudou como eu escrevo."</p><div class="testi-name">A. Ribeiro</div></div>
+    </div>
+  </div>
+</section>
+<section class="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">como funciona</div>
+      <h2>Fácil e prático</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><div class="step-index">1</div><h3>Receba na hora</h3><p>Assim que a compra é aprovada, o acesso chega direto no seu e-mail ou WhatsApp.</p></div>
+      <div class="step"><div class="step-index">2</div><h3>Baixe e imprima</h3><p>Baixe todos os materiais em PDF e imprima as páginas que precisar.</p></div>
+      <div class="step"><div class="step-index">3</div><h3>Pratique e evolua</h3><p>Reserve de 10 a 30 minutos por dia e veja sua letra ficar bonita a cada traço.</p></div>
+    </div>
+  </div>
+</section>
+<section class="bonus-wrap">
+  <div class="wrap">
+    <div class="bonus">
+      <div class="ebook-mock">Guia de<br>Postura e Traço</div>
+      <div>
+        <div class="bonus-badge">Comprando hoje</div>
+        <h2 style="font-size:24px; margin-bottom:10px; color:#fff;">Ganhe um bônus exclusivo, de graça</h2>
+        <p>Ao adquirir o Letra Bonita hoje, você recebe também o e-book "Postura e Traço", com dicas práticas de como segurar a caneta e posicionar a mão pra escrever sem cansaço.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="planos" class="pricing-wrap">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">escolha seu pacote</div>
+      <h2>Planos do Letra Bonita</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card basic">
+        <div class="price-name">Pacote Básico</div>
+        <div class="price-title">300+ exercícios de caligrafia</div>
+        <ul class="price-list">
+          <li><span class="mark">✓</span> Combo +300 atividades de caligrafia</li>
+          <li><span class="mark">✓</span> Módulo de coordenação motora</li>
+          <li><span class="mark">✓</span> Módulo de alfabetos</li>
+        </ul>
+        <div class="price-now">R$9,90</div>
+        <div class="price-note">Pagamento único · acesso imediato</div>
+        <a href="#" class="btn btn-violet btn-block">Eu quero o pacote básico</a>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-tag">Mais escolhido</div>
+        <div class="price-name">Pacote Premium</div>
+        <div class="price-title">Tudo do básico + método completo</div>
+        <ul class="price-list">
+          <li><span class="mark">✓</span> Tudo do pacote básico</li>
+          <li><span class="mark">✓</span> Mega apostila avançada (150+ páginas)</li>
+          <li><span class="mark">✓</span> Alfabeto letra bastão, cursiva e junto/script</li>
+          <li><span class="mark">✓</span> Bônus: e-book "Postura e Traço"</li>
+        </ul>
+        <div class="price-now">R$27,90</div>
+        <div class="price-note">Pagamento único · acesso imediato</div>
+        <a href="#" class="btn btn-orange btn-block">Quero o pacote premium agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="trust">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:36px;">
+      <div class="kicker dark">compra 100% segura</div>
+      <h2>Sem risco pra você</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item"><div class="trust-icon">7</div><h3>Garantia de 7 dias</h3><p>Não gostou? Devolvemos seu dinheiro sem burocracia.</p></div>
+      <div class="trust-item"><div class="trust-icon">✉</div><h3>Acesso imediato</h3><p>Recebe por e-mail assim que o pagamento é aprovado.</p></div>
+      <div class="trust-item"><div class="trust-icon">🔒</div><h3>Pagamento protegido</h3><p>Ambiente seguro, com Pix ou cartão em até 3x.</p></div>
+    </div>
+    <div class="trust-cta"><a href="#planos" class="btn btn-violet">Quero começar agora</a></div>
+  </div>
+</section>
+<section class="faq-wrap">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker dark">dúvidas</div>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Como vou receber o material? <span class="plus">+</span></summary>
+        <p>Tudo é entregue digitalmente por e-mail assim que o pagamento é confirmado, com acesso à área de membros.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O material é físico ou digital? <span class="plus">+</span></summary>
+        <p>100% digital. Você baixa o PDF e imprime as páginas de exercícios quando quiser.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Serve pra adultos e crianças? <span class="plus">+</span></summary>
+        <p>Sim, o método tem módulos pra quem está alfabetizando e pra quem já escreve e quer melhorar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Em quanto tempo vou ver resultados? <span class="plus">+</span></summary>
+        <p>A maioria dos alunos nota diferença já na primeira semana, praticando entre 10 e 30 minutos por dia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu não gostar do material? <span class="plus">+</span></summary>
+        <p>Você tem 7 dias de garantia. Basta pedir o reembolso e devolvemos o valor integral.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="logo2">Letra Bonita</div>
+    <p>Todos os direitos reservados. Este material é protegido por leis de direitos autorais. É proibida a reprodução ou distribuição sem autorização prévia.</p>
+  </div>
+</footer>
+</body>
+</html>
